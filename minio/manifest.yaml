@@ -1,12 +1,12 @@
-version: 0.0.3
+version: 0.0.4
 type: plugin
-author: aias00
-name: minio
+author: liujiakuo
+name: myminio
 label:
-  en_US: minio
-  ja_JP: minio
-  zh_Hans: minio
-  pt_BR: minio
+  en_US: myminio
+  ja_JP: myminio
+  zh_Hans: myminio
+  pt_BR: myminio
 description:
   en_US: Tools for writing content to minio, reading from minio, and uploading local files to minio
   ja_JP: Tools for writing content to minio, reading from minio, and uploading local files to minio
