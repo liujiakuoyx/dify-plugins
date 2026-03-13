@@ -1,6 +1,7 @@
 from collections.abc import Generator
 from typing import Any
 import os
+import time
 from minio import Minio
 from dify_plugin import Tool
 from dify_plugin.entities.tool import ToolInvokeMessage
@@ -11,10 +12,24 @@ class MinioUploaderTool(Tool):
         # 从参数中获取本地文件路径和目标对象名称
         local_file_path = tool_parameters.get("local_file_path")
         object_name = tool_parameters.get("object_name")
+        add_timestamp = tool_parameters.get("add_timestamp", False)
         
         if not local_file_path or not object_name:
             yield self.create_json_message({"message": "local_file_path and object_name are required"})
             return
+        
+        # 如果启用时间戳，在文件扩展名之前添加毫秒时间戳
+        if add_timestamp:
+            # 分离文件名和扩展名
+            name_parts = object_name.rsplit('.', 1)
+            if len(name_parts) == 2:
+                # 有扩展名的情况
+                timestamp = int(time.time() * 1000)
+                object_name = f"{name_parts[0]}_{timestamp}.{name_parts[1]}"
+            else:
+                # 没有扩展名的情况
+                timestamp = int(time.time() * 1000)
+                object_name = f"{object_name}_{timestamp}"
         
         # 检查本地文件是否存在
         if not os.path.exists(local_file_path):

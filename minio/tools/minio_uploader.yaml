@@ -78,6 +78,18 @@ parameters:
       zh_Hans: MinIO存储桶中的对象/文件名（例如 folder/file.txt）。
     llm_description: A tool to upload local files to a MinIO bucket.
     form: llm
+  - name: add_timestamp
+    type: boolean
+    required: false
+    default: false
+    label:
+      en_US: Add Timestamp
+      zh_Hans: 添加时间戳
+    human_description:
+      en_US: Add millisecond timestamp before file extension to prevent duplicate file names (e.g., file.txt becomes file_1710345678123.txt).
+      zh_Hans: 在文件扩展名之前添加毫秒时间戳以防止文件重名（例如 file.txt 变为 file_1710345678123.txt）。
+    llm_description: When enabled, adds a millisecond timestamp before the file extension to prevent duplicate file names in S3/MinIO.
+    form: form
 extra:
   python:
     source: tools/minio_uploader.py
