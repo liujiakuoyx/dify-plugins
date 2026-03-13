@@ -1,6 +1,6 @@
 identity:
   name: minio_writer
-  author: aias00
+  author: liujiakuo
   label:
     en_US: minio_writer
     zh_Hans: MinIO写入工具
