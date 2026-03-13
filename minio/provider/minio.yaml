@@ -6,14 +6,15 @@ identity:
     zh_Hans: minio
     pt_BR: minio
   description:
-    en_US: Tools for writing content to minio and reading from minio
-    zh_Hans: Tools for writing content to minio and reading from minio
-    pt_BR: Tools for writing content to minio and reading from minio
+    en_US: Tools for writing content to minio, reading from minio, and uploading local files to minio
+    zh_Hans: 用于将内容写入minio、从minio读取以及上传本地文件到minio的工具
+    pt_BR: Tools for writing content to minio, reading from minio, and uploading local files to minio
   icon: minio.svg
 
 tools:
   - tools/minio_reader.yaml
   - tools/minio_writer.yaml
+  - tools/minio_uploader.yaml
 extra:
   python:
     source: provider/minio.py

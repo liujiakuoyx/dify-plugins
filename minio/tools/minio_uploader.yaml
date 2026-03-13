@@ -1,0 +1,83 @@
+identity:
+  name: minio_uploader
+  author: aias00
+  label:
+    en_US: minio_uploader
+    zh_Hans: MinIO文件上传工具
+    pt_BR: minio_uploader
+description:
+  human:
+    en_US: A tool to upload local files to a MinIO bucket.
+    zh_Hans: 将本地文件上传到MinIO存储桶的工具。
+    pt_BR: A tool to upload local files to a MinIO bucket.
+  llm: A tool to upload local files to a MinIO bucket.
+parameters:
+  - name: access_key
+    type: string
+    required: true
+    label:
+      en_US: MinIO Access Key
+      zh_Hans: MinIO访问密钥
+    human_description:
+      en_US: The access key for MinIO authentication.
+      zh_Hans: 用于MinIO身份验证的访问密钥。
+    llm_description: A tool to upload local files to a MinIO bucket.
+    form: form
+  - name: secret_key
+    type: string
+    required: true
+    label:
+      en_US: MinIO Secret Key
+      zh_Hans: MinIO秘密密钥
+    human_description:
+      en_US: The secret key for MinIO authentication.
+      zh_Hans: 用于MinIO身份验证的秘密密钥。
+    llm_description: A tool to upload local files to a MinIO bucket.
+    form: form
+  - name: endpoint
+    type: string
+    required: true
+    label:
+      en_US: MinIO Endpoint URL
+      zh_Hans: MinIO端点URL
+    human_description:
+      en_US: The endpoint URL of the MinIO server (e.g., http://localhost:9000).
+      zh_Hans: MinIO服务器的端点URL（例如 http://localhost:9000）。
+    llm_description: A tool to upload local files to a MinIO bucket.
+    form: form
+  - name: bucket_name
+    type: string
+    required: true
+    label:
+      en_US: Bucket Name
+      zh_Hans: 存储桶名称
+    human_description:
+      en_US: The name of the MinIO bucket to upload to.
+      zh_Hans: 要上传到的MinIO存储桶名称。
+    llm_description: A tool to upload local files to a MinIO bucket.
+    form: form
+  - name: local_file_path
+    type: string
+    required: true
+    label:
+      en_US: Local File Path
+      zh_Hans: 本地文件路径
+    human_description:
+      en_US: The absolute or relative path to the local file to upload.
+      zh_Hans: 要上传的本地文件的绝对或相对路径。
+    llm_description: A tool to upload local files to a MinIO bucket.
+    form: llm
+  - name: object_name
+    type: string
+    required: true
+    label:
+      en_US: Object Name
+      zh_Hans: 对象名称
+    human_description:
+      en_US: The name of the object/file in the MinIO bucket (e.g., folder/file.txt).
+      zh_Hans: MinIO存储桶中的对象/文件名（例如 folder/file.txt）。
+    llm_description: A tool to upload local files to a MinIO bucket.
+    form: llm
+extra:
+  python:
+    source: tools/minio_uploader.py

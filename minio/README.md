@@ -1,7 +1,7 @@
 # Minio Plugin
 
 **Author:** [aias00](https://github.com/aias00)
-**Version:** 0.0.2
+**Version:** 0.0.3
 **Type:** tool
 
 ## Description
@@ -45,6 +45,27 @@ The MinioReader Plugin allows users to read data from Minio.
 | endpoint | string | Yes | endpoint of the remote server |
 | bucket_name | string | Yes | bucket name in minio |
 | object_name | string | Yes | object name to read from minio |
+
+
+### MinioUploader Plugin
+
+The MinioUploader Plugin allows users to upload local files to Minio.
+![](./_assets/minio_uploader.png)
+
+### Features
+
+- Upload local files to minio and returns upload status
+
+### Parameters
+
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| access_key | string | Yes | access_key of the remote server |
+| secret_key | string | Yes | secret_key of the remote server |
+| endpoint | string | Yes | endpoint of the remote server |
+| bucket_name | string | Yes | bucket name in minio |
+| local_file_path | string | Yes | Local file path to upload |
+| object_name | string | Yes | object name in minio bucket |
 
 ## Security Considerations
 
